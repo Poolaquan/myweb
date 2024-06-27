@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" href="images/style.css" rel="stylesheet" />
+<title>例子</title>
+</head>
+
+<body>
+<script type="text/javascript">
+var delta=0.08
+	var collection;
+	function floaters() {
+		this.items	= [];
+		this.addItem	= function(id,x,y,content)
+				  {
+					document.write('<DIV id='+id+' style="z-index: 1000; POSITION: absolute;  width:80px; height:60px;left:'+(typeof(x)=='string'?eval(x):x)+'px;top:'+(typeof(y)=='string'?eval(y):y)+'px">'+content+'</DIV>');
+					
+					var newItem				= {};
+					newItem.object			= document.getElementById(id);
+					newItem.x				= x;
+					newItem.y				= y;
+
+					this.items[this.items.length]		= newItem;
+				  }
+		this.play	= function()
+				  {
+					collection				= this.items
+					setInterval('play()',10);
+				  }
+		}
+		function play()
+		{
+
+			for(var i=0;i<collection.length;i++)
+			{
+				var followObj		= collection[i].object;
+				var followObj_x		= (typeof(collection[i].x)=='string'?eval(collection[i].x):collection[i].x);
+				var followObj_y		= (typeof(collection[i].y)=='string'?eval(collection[i].y):collection[i].y);
+
+				if(followObj.offsetLeft!=(document.body.scrollLeft+followObj_x)) {
+					var dx=(document.body.scrollLeft+followObj_x-followObj.offsetLeft)*delta;
+					dx=(dx>0?1:-1)*Math.ceil(Math.abs(dx));
+					followObj.style.left=followObj.offsetLeft+dx + 'px';
+					}
+
+				if(followObj.offsetTop!=(document.body.scrollTop+followObj_y)) {
+					var dy=(document.body.scrollTop+followObj_y-followObj.offsetTop)*delta;
+					dy=(dy>0?1:-1)*Math.ceil(Math.abs(dy));
+					followObj.style.top=followObj.offsetTop+dy + 'px';
+					}
+				followObj.style.display	= '';
+			}
+		}	
+		
+	var theFloaters		= new floaters();
+	//右面
+	theFloaters.addItem('followDiv1','document.body.clientWidth-106',138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
+	//左面
+	theFloaters.addItem('followDiv2',6,138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
+	theFloaters.play();
+</script>
+<div id="top">
+	<div class="menu">
+		<div class="logo"><a href="index.html">公共单车那些事</a></div>
+		<div class="nav">
+			<ul>
+				<li style="border-left:1px solid #666;"><a href="index.html">首页</a></li>
+				<li><a href="index2.0map.html">全国</a></li>
+				<li><a href="index2.0stock.html">例子</a></li>
+				<li><a href="index2.0e1.html">问题</a></li>
+				<li><a href="index2.0chart.html">未来</a></li>
+				<li><a href="index2.0sum.html">总结</a></li>
+				<div style="clear:both;"></div>
+			</ul>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+<div id="main">
+	<div class="left">
+		<div class="notice">
+<font face="Verdana, Geneva, sans-serif" size="+0.5" color="#000000"><script src="images/others/jquery.min.js"></script>
+<script src="images/others/selectshare.js"></script>
+</head>
+
+<body>
+	
+		随着城市汽车保有量不断攀升，不少城市大力倡导低碳生活、绿色出行，建立自行车公共租赁系统，缓解交通压力，城市公共自行车的数量随着需求量的增多而不断增加。<strong>从2014年起，中国进入公共自行车元年。</strong>本章以兰州为例，展现从2014年至今的兰州公共自行车数量变化。
+
+		
+	
+<script>
+function inputimage(){
+$('<img id="imgSinaShare" class="img_share" title="选中内容分享到新浪微博" src="images/sina_share.gif" /><img id="imgQqShare" class="img_share" title="选中内容分享到腾讯微博" src="images/tt_share.png" />').appendTo('body');
+}
+</script>
+
+</font>
+
+		</div>
+	</div>
+	<div class="right">
+		<div class="men_list">
+			<ul>
+				<html>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="images/stocks/jquery-1.8.3.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: '兰州公共自行车开通后的投入量'
+        },
+        subtitle: {
+            text: '来源：兰州晨报'
+        },
+        xAxis: {
+            categories: ['2014年06月', '2014年08月', '2014年10月', '2014年12月', '2015年02月', '2015年04月',
+                '2015年06月', '2015年08月', '2015年10月', '2015年12月', '2016年02月', '2016年04月']
+        },
+        yAxis: {
+            title: {
+                text: '市区公共自行车投放数'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value + '辆';
+                }
+            }
+        },
+        tooltip: {
+            crosshairs: true,
+            shared: true
+        },
+        plotOptions: {
+            spline: {
+                marker: {
+                    radius: 4,
+                    lineColor: '#666666',
+                    lineWidth: 1
+                }
+            }
+        },
+        series: [{
+            name: '市公共自行车公司自行车数量',
+            marker: {
+                symbol: 'diamond'
+            },
+            data: [{
+                y: 6000,
+                marker: {
+                    symbol: 'url(images/自行车2.png)'
+                }
+            }, 7200, 8000, 8450, 8500, 8500, {
+                y: 10500,
+                marker: {
+                    symbol: 'url(images/自行车.png)'
+                }
+            }, 11000, 12000, 11950, 12000, 12050]
+        }]
+    });
+});
+		</script>
+	</head>
+	<body>
+<script src="images/stocks/highcharts.js"></script>
+<script src="images/stocks/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>	
+
+
+
+
+
+</head>
+<body>
+    <canvas id="canvas" resize></canvas>
+</body>
+</html>
+
+
+
+
+
+			   <div style="clear:both;"></div>
+			</ul>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+<div id="footer">
+版权所有：2016 作者：蒲乐川 李俊杰
+</div>
+</body>
+</html>

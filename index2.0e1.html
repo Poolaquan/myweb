@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" href="images/style.css" rel="stylesheet" />
+<title>人为损坏-问题</title>
+</head>
+
+<body>
+<script type="text/javascript">
+var delta=0.08
+	var collection;
+	function floaters() {
+		this.items	= [];
+		this.addItem	= function(id,x,y,content)
+				  {
+					document.write('<DIV id='+id+' style="z-index: 1000; POSITION: absolute;  width:80px; height:60px;left:'+(typeof(x)=='string'?eval(x):x)+'px;top:'+(typeof(y)=='string'?eval(y):y)+'px">'+content+'</DIV>');
+					
+					var newItem				= {};
+					newItem.object			= document.getElementById(id);
+					newItem.x				= x;
+					newItem.y				= y;
+
+					this.items[this.items.length]		= newItem;
+				  }
+		this.play	= function()
+				  {
+					collection				= this.items
+					setInterval('play()',10);
+				  }
+		}
+		function play()
+		{
+
+			for(var i=0;i<collection.length;i++)
+			{
+				var followObj		= collection[i].object;
+				var followObj_x		= (typeof(collection[i].x)=='string'?eval(collection[i].x):collection[i].x);
+				var followObj_y		= (typeof(collection[i].y)=='string'?eval(collection[i].y):collection[i].y);
+
+				if(followObj.offsetLeft!=(document.body.scrollLeft+followObj_x)) {
+					var dx=(document.body.scrollLeft+followObj_x-followObj.offsetLeft)*delta;
+					dx=(dx>0?1:-1)*Math.ceil(Math.abs(dx));
+					followObj.style.left=followObj.offsetLeft+dx + 'px';
+					}
+
+				if(followObj.offsetTop!=(document.body.scrollTop+followObj_y)) {
+					var dy=(document.body.scrollTop+followObj_y-followObj.offsetTop)*delta;
+					dy=(dy>0?1:-1)*Math.ceil(Math.abs(dy));
+					followObj.style.top=followObj.offsetTop+dy + 'px';
+					}
+				followObj.style.display	= '';
+			}
+		}	
+		
+	var theFloaters		= new floaters();
+	//右面
+	theFloaters.addItem('followDiv1','document.body.clientWidth-106',138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
+	//左面
+	theFloaters.addItem('followDiv2',6,138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
+	theFloaters.play();
+</script>
+<div id="top">
+	<div class="menu">
+		<div class="logo"><a href="index.html">公共单车那些事</a></div>
+		<div class="nav">
+			<ul>
+				<li style="border-left:1px solid #666;"><a href="index.html">首页</a></li>
+				<li><a href="index2.0map.html">全国</a></li>
+				<li><a href="index2.0stock.html">例子</a></li>
+				<li><a href="index2.0e1.html">问题</a></li>
+				<li><a href="index2.0chart.html">未来</a></li>
+				<li><a href="index2.0sum.html">总结</a></li>
+				<div style="clear:both;"></div>
+			</ul>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+<div id="main">
+	<div class="left">
+		<div class="notice">
+<font face="Verdana, Geneva, sans-serif" size="+0.5" color="#000000"><script src="images/others/jquery.min.js"></script>
+<script src="images/others/selectshare.js"></script>
+</head>
+
+<body>
+	公共单车推行四年，政府投入数以千万计，虽有一定成效，但也存在各种问题。由于单车使用者多，损坏比较严重，甚至存在有人故意损坏的现象。如果租车后才发现车辆有故障，应将车送到最近的服务点，租车者要按照“公共自行车损坏、遗失赔偿标准”赔偿。以西安为例——
+		
+	
+<script>
+function inputimage(){
+$('<img id="imgSinaShare" class="img_share" title="选中内容分享到新浪微博" src="images/sina_share.gif" /><img id="imgQqShare" class="img_share" title="选中内容分享到腾讯微博" src="images/tt_share.png" />').appendTo('body');
+}
+</script></font>
+		</div>
+	</div>
+	<div class="right">
+		<div class="men_list">
+			<ul>
+				<li><img src="images/5.5.jpg" />
+<script type="text/javascript" src="images/others/typewriter.js"></script>
+</head>
+
+<body>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                
+                <span class="space"/><span class="comments">* 存在问题</span><br />
+                <span class="space"/><span class="comments">* 西安公共自行车服务系统自2013年运行以来，解决了市民“最后一公里”的出行问题，深受市民欢迎。但也出现市民不爱惜公共自行车，没有按照说明正确操作，对公共自行车造成不同程度损坏。</span><br />
+               
+                
+                
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+ document.getElementById("code").typewriter();
+    </script>
+				</li>
+				<div style="clear:both;"></div>
+			</ul>
+			<div class="content">
+				<div class="s_nav">
+					<li><a href="index2.0e1.html">人为损坏</a></li>
+					<li><a href="index2.0e2.html">管理不善</a></li>
+					<li style="border:none;"><a href="index2.0e3.html">专家点评</a></li>
+				</div>
+				<div style="clear:both;"></div>
+				<div class="con">
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="images/es/jquery-1.8.3.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: '西安主要公共自行车停放点车辆损坏原因及数量'
+        },
+        xAxis: {
+            categories: ['钟楼', '行政中心', '纺织城', '航天城', '后卫寨']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '来源：西部网'
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series: [{
+            name: '车轴断落',
+            data: [5, 3, 4, 7, 2]
+        }, {
+            name: '车把丢失',
+            data: [2, 2, 3, 2, 1]
+        }, {
+            name: '车链损坏',
+            data: [2, 2, 3, 2, 1]
+        }, {
+            name: '车胎没气',
+            data: [3, 4, 4, 2, 5]
+        }]
+    });
+});
+		</script>
+	</head>
+	<body>
+<script src="images/es/highcharts.js"></script>
+<script src="images/es/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+<div id="footer">
+版权所有：2016 作者：蒲乐川 李俊杰
+</div>
+</body>
+</html>

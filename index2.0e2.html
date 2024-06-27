@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" href="images/style.css" rel="stylesheet" />
+<title>管理不善-问题</title>
+</head>
+
+<body><script type="text/javascript">
+var delta=0.08
+	var collection;
+	function floaters() {
+		this.items	= [];
+		this.addItem	= function(id,x,y,content)
+				  {
+					document.write('<DIV id='+id+' style="z-index: 1000; POSITION: absolute;  width:80px; height:60px;left:'+(typeof(x)=='string'?eval(x):x)+'px;top:'+(typeof(y)=='string'?eval(y):y)+'px">'+content+'</DIV>');
+					
+					var newItem				= {};
+					newItem.object			= document.getElementById(id);
+					newItem.x				= x;
+					newItem.y				= y;
+
+					this.items[this.items.length]		= newItem;
+				  }
+		this.play	= function()
+				  {
+					collection				= this.items
+					setInterval('play()',10);
+				  }
+		}
+		function play()
+		{
+
+			for(var i=0;i<collection.length;i++)
+			{
+				var followObj		= collection[i].object;
+				var followObj_x		= (typeof(collection[i].x)=='string'?eval(collection[i].x):collection[i].x);
+				var followObj_y		= (typeof(collection[i].y)=='string'?eval(collection[i].y):collection[i].y);
+
+				if(followObj.offsetLeft!=(document.body.scrollLeft+followObj_x)) {
+					var dx=(document.body.scrollLeft+followObj_x-followObj.offsetLeft)*delta;
+					dx=(dx>0?1:-1)*Math.ceil(Math.abs(dx));
+					followObj.style.left=followObj.offsetLeft+dx + 'px';
+					}
+
+				if(followObj.offsetTop!=(document.body.scrollTop+followObj_y)) {
+					var dy=(document.body.scrollTop+followObj_y-followObj.offsetTop)*delta;
+					dy=(dy>0?1:-1)*Math.ceil(Math.abs(dy));
+					followObj.style.top=followObj.offsetTop+dy + 'px';
+					}
+				followObj.style.display	= '';
+			}
+		}	
+		
+	var theFloaters		= new floaters();
+	//右面
+	theFloaters.addItem('followDiv1','document.body.clientWidth-106',138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
+	//左面
+	theFloaters.addItem('followDiv2',6,138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
+	theFloaters.play();
+</script>
+
+<div id="top">
+	<div class="menu">
+		<div class="logo"><a href="index.html">公共单车那些事</a></div>
+		<div class="nav">
+			<ul>
+				<li style="border-left:1px solid #666;"><a href="index.html">首页</a></li>
+				<li><a href="index2.0map.html">全国</a></li>
+				<li><a href="index2.0stock.html">例子</a></li>
+				<li><a href="index2.0e1.html">问题</a></li>
+				<li><a href="index2.0chart.html">未来</a></li>
+				<li><a href="index2.0sum.html">总结</a></li>
+				<div style="clear:both;"></div>
+			</ul>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+<div id="main">
+	<div class="left">
+		<div class="notice">
+<font face="Verdana, Geneva, sans-serif" size="+0.5" color="#000000"><script src="images/others/jquery.min.js"></script>
+<script src="images/others/selectshare.js"></script>
+</head>
+
+<body>
+	2012年6月至今，由政府主导，企业参与运营的模式运行得如何呢？从办卡总量和数量和建成站点来说公共自行车已经具有相当规模。但仍存在许多问题，基础设施方面，城市规划里原本没有给公共自行车站点留出位置；行车道划分方面，人车交织混行的现象非常严重。以武汉为例——
+	
+<script>
+function inputimage(){
+$('<img id="imgSinaShare" class="img_share" title="选中内容分享到新浪微博" src="images/sina_share.gif" /><img id="imgQqShare" class="img_share" title="选中内容分享到腾讯微博" src="images/tt_share.png" />').appendTo('body');
+}
+</script>
+</font>
+		</div>
+	</div>
+	<div class="right">
+		<div class="men_list">
+			<ul>
+				<li><img src="images/6.6.jpg" />
+<script type="text/javascript" src="images/others/typewriter.js"></script>
+</head>
+
+<body>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                
+                <span class="space"/><span class="comments">* 存在问题</span><br />
+                <span class="space"/><span class="comments">* 2009年3月15日，武汉市政府发出文件，正式启动城市公共自行车项目。其所采用的是政府主导推动，但不投入资金的模式。而正是这一思路和公共服务的提供模式，为这场巨大的公共自行车实验埋下了败笔。</span><br />
+               
+                
+                
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+ document.getElementById("code").typewriter();
+    </script>
+
+				</li>
+				<div style="clear:both;"></div>
+			</ul>
+			<div class="content">
+				<div class="s_nav">
+					<li><a href="index2.0e1.html">人为损坏</a></li>
+					<li><a href="index2.0e2.html">管理不善</a></li>
+					<li style="border:none;"><a href="index2.0e3.html">专家点评</a></li>
+				</div>
+				<div style="clear:both;"></div>
+				<div class="con">
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="images/ss/jquery-1.8.3.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+$(function () {
+
+    $('#container').highcharts({
+
+        chart: {
+            polar: true,
+            type: 'area'
+        },
+
+        title: {
+            text: '武汉公共自行车的管理问题',
+            x: -20
+        },
+        subtitle: {
+            text: '来源: 搜狐'
+        },
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: ['站点分布不够合理', '坏车、故障车多', '限制办卡数量', '卡片丢失不能挂失','不能跨区还车',
+                    '押金不随卡退还', '供应量太少'],
+            tickmarkPlacement: 'on',
+            lineWidth: 0
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0
+        },
+
+        tooltip: {
+            shared: true,
+            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
+        },
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'top',
+            y: 70,
+            layout: 'vertical'
+        },
+
+        series: [{
+            name: '上班族',
+            data: [7, 13, 11, 17, 14, 3, 29],
+            pointPlacement: 'on'
+        },{
+            name: '学生',
+            data: [5, 18, 4, 15, 8, 22, 6],
+            pointPlacement: 'on'
+        },{
+            name: '老年人',
+            data: [13,19, 4, 24, 9, 7, 13],
+            pointPlacement: 'on'
+        }, {
+            name: '外地游客',
+            data: [22,14, 4, 10, 8, 13, 25],
+            pointPlacement: 'on'
+        }]
+
+    });
+});
+		</script>
+	</head>
+	<body>
+<script src="images/ss/highcharts.js"></script>
+<script src="images/ss/highcharts-more.js"></script>
+<script src="images/ss/exporting.js"></script>
+
+<div id="container" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+<div id="footer">
+版权所有：2016 作者：蒲乐川 李俊杰
+</div>
+</body>
+</html>

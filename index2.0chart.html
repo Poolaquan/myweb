@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" href="images/style.css" rel="stylesheet" />
+<title>未来</title>
+</head>
+
+<body>
+<script type="text/javascript">
+var delta=0.08
+	var collection;
+	function floaters() {
+		this.items	= [];
+		this.addItem	= function(id,x,y,content)
+				  {
+					document.write('<DIV id='+id+' style="z-index: 1000; POSITION: absolute;  width:80px; height:60px;left:'+(typeof(x)=='string'?eval(x):x)+'px;top:'+(typeof(y)=='string'?eval(y):y)+'px">'+content+'</DIV>');
+					
+					var newItem				= {};
+					newItem.object			= document.getElementById(id);
+					newItem.x				= x;
+					newItem.y				= y;
+
+					this.items[this.items.length]		= newItem;
+				  }
+		this.play	= function()
+				  {
+					collection				= this.items
+					setInterval('play()',10);
+				  }
+		}
+		function play()
+		{
+
+			for(var i=0;i<collection.length;i++)
+			{
+				var followObj		= collection[i].object;
+				var followObj_x		= (typeof(collection[i].x)=='string'?eval(collection[i].x):collection[i].x);
+				var followObj_y		= (typeof(collection[i].y)=='string'?eval(collection[i].y):collection[i].y);
+
+				if(followObj.offsetLeft!=(document.body.scrollLeft+followObj_x)) {
+					var dx=(document.body.scrollLeft+followObj_x-followObj.offsetLeft)*delta;
+					dx=(dx>0?1:-1)*Math.ceil(Math.abs(dx));
+					followObj.style.left=followObj.offsetLeft+dx + 'px';
+					}
+
+				if(followObj.offsetTop!=(document.body.scrollTop+followObj_y)) {
+					var dy=(document.body.scrollTop+followObj_y-followObj.offsetTop)*delta;
+					dy=(dy>0?1:-1)*Math.ceil(Math.abs(dy));
+					followObj.style.top=followObj.offsetTop+dy + 'px';
+					}
+				followObj.style.display	= '';
+			}
+		}	
+		
+	var theFloaters		= new floaters();
+	//右面
+	theFloaters.addItem('followDiv1','document.body.clientWidth-106',138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
+	//左面
+	theFloaters.addItem('followDiv2',6,138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
+	theFloaters.play();
+</script>
+<div id="top">
+	<div class="menu">
+		<div class="logo"><a href="index.html">公共单车那些事</a></div>
+		<div class="nav">
+			<ul>
+				<li style="border-left:1px solid #666;"><a href="index.html">首页</a></li>
+				<li><a href="index2.0map.html">全国</a></li>
+				<li><a href="index2.0stock.html">例子</a></li>
+				<li><a href="index2.0e1.html">问题</a></li>
+				<li><a href="index2.0chart.html">未来</a></li>
+				<li><a href="index2.0sum.html">总结</a></li>
+				<div style="clear:both;"></div>
+			</ul>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+<div id="main">
+	<div class="left">
+		<div class="notice">
+<font face="Verdana, Geneva, sans-serif" size="+0.5" color="#000000"><script src="images/others/jquery.min.js"></script>
+<script src="images/others/selectshare.js"></script>
+</head>
+
+<body>
+	
+		今年初，国家发改委会同交通部等部门联合下发《“十三五”节能减排实施方案》，倡导“135”出行方式，即1公里以内步行，3公里以内骑自行车，5公里以内乘坐公共交通工具；并提出加快推进公务用车制度改革，开展公务自行车试点。此次交通运输部共投入了50辆订制的自行车，车身印有“公共自行车”和“低碳交通、绿色出行”的字样。
+
+		
+	
+<script>
+function inputimage(){
+$('<img id="imgSinaShare" class="img_share" title="选中内容分享到新浪微博" src="images/sina_share.gif" /><img id="imgQqShare" class="img_share" title="选中内容分享到腾讯微博" src="images/tt_share.png" />').appendTo('body');
+}
+</script>
+
+</font>
+
+		</div>
+	</div>
+	<div class="right">
+		<div class="men_list">
+			<ul>
+				<html>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="images/charts/jquery-1.8.3.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+$(function () {
+    // Create the chart
+    $('#container').highcharts({
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: '十三五中国公共交通发展未来投资占比'
+        },
+        subtitle: {
+            text: '点击扇形查看具体数字.  来源: 中华人民共和国交通运输部'
+        },
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.y:.1f}%'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> 占比<br/>'
+        },
+        series: [{
+            name: '原图',
+            colorByPoint: true,
+            data: [{
+                name: '公共汽电车',
+                y: 26.33,
+                drilldown: '公共汽电车'
+            }, {
+                name: '城市轨道交通',
+                y: 24.03,
+                drilldown: '城市轨道交通'
+            }, {
+                name: '公共自行车',
+                y: 10.38,
+                drilldown: '公共自行车'
+            }, {
+                name: '智能交通系统',
+                y: 4.77,
+                drilldown: '智能交通系统'
+            }, {
+                name: '原有交通系统改造',
+                y: 34.99,
+                drilldown: '原有交通系统改造'
+            
+            }]
+        }],
+        drilldown: {
+            series: [{
+                name: '公共汽电车未来市场投资',
+                id: '公共汽电车',
+                data: [
+                    ['CNG能源公共汽车', 14.13],
+                    ['纯电能源公共汽车', 7.2],
+                    ['传统能源公共汽车', 5]
+                ]
+            }, {
+                name: '城市轨道交通未来市场投资',
+                id: '城市轨道交通',
+                data: [
+                    ['地下轨道', 11],
+                    ['地上BRT通道', 4.32],
+                    ['城区轻型轨道', 3.68],
+                    ['城际高速轨道', 5.03]
+                ]
+            }, {
+                name: '公共自行车未来市场投资',
+                id: '公共自行车',
+                data: [
+                    ['民营市场', 6.76],
+                    ['政府市场', 3.62]
+                ]
+            }, {
+                name: '智能交通系统未来市场投资',
+                id: '智能交通系统',
+                data: [
+                    ['民营投资', 3.56],
+                    ['政府投资', 1.21]
+                ]
+            }, {
+                name: '原有交通系统改造投资',
+                id: '原有交通系统改造',
+                data: [
+                    ['新建城区交通系统建设', 14.99],
+                    ['老旧城区交通系统升级', 20.00]
+                ]
+            }]
+        }
+    });
+});
+		</script>
+	</head>
+	<body>
+<script src="images/charts/highcharts.js"></script>
+<script src="images/charts/data.js"></script>
+<script src="images/charts/drilldown.js"></script>
+<script src="images/charts/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+
+<!-- Data from www.netmarketshare.com. Select Browsers => Desktop share by version. Download as tsv. -->
+<pre id="tsv" style="display:none">Browser Version    Total Market Share
+Microsoft Internet Explorer 8.0    26.61%
+Microsoft Internet Explorer 9.0    16.96%
+Chrome 18.0    8.01%
+Chrome 19.0    7.73%
+Firefox 12    6.72%
+Microsoft Internet Explorer 6.0    6.40%
+Firefox 11    4.72%
+Microsoft Internet Explorer 7.0    3.55%
+Safari 5.1    3.53%
+Firefox 13    2.16%
+Firefox 3.6    1.87%
+Opera 11.x    1.30%
+Chrome 17.0    1.13%
+Firefox 10    0.90%
+Safari 5.0    0.85%
+Firefox 9.0    0.65%
+Firefox 8.0    0.55%
+Firefox 4.0    0.50%
+Chrome 16.0    0.45%
+Firefox 3.0    0.36%
+Firefox 3.5    0.36%
+Firefox 6.0    0.32%
+Firefox 5.0    0.31%
+Firefox 7.0    0.29%
+Proprietary or Undetectable    0.29%
+Chrome 18.0 - Maxthon Edition    0.26%
+Chrome 14.0    0.25%
+Chrome 20.0    0.24%
+Chrome 15.0    0.18%
+Chrome 12.0    0.16%
+Opera 12.x    0.15%
+Safari 4.0    0.14%
+Chrome 13.0    0.13%
+Safari 4.1    0.12%
+Chrome 11.0    0.10%
+Firefox 14    0.10%
+Firefox 2.0    0.09%
+Chrome 10.0    0.09%
+Opera 10.x    0.09%
+Microsoft Internet Explorer 8.0 - Tencent Traveler Edition    0.09%</pre>
+
+	</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Import From File</title>
+    <link rel="stylesheet" href="images/others/style.css">
+    <script type="text/javascript" src="images/others/paper-full.js"></script>
+    <script type="text/paperscript" canvas="canvas">
+        var file = document.getElementById('file');
+        file.addEventListener('change', function (event) {
+            var files = event.target.files;
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                if (file.type.match('svg')) {
+                    project.clear();
+                    project.importSVG(file, function(item) {
+                        console.log(item);
+                    });
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <form>
+    <input type="file" id="file">
+    </form>
+    <canvas id="canvas" width="1000" height="1000"></canvas>
+</body>
+</html>
+
+				<div style="clear:both;"></div>
+			</ul>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+<div id="footer">
+版权所有：2016 作者：蒲乐川 李俊杰
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" href="images/style.css" rel="stylesheet" />
+<title>首页</title>
+</head>
+
+<body>
+<script type="text/javascript">
+var delta=0.08
+	var collection;
+	function floaters() {
+		this.items	= [];
+		this.addItem	= function(id,x,y,content)
+				  {
+					document.write('<DIV id='+id+' style="z-index: 1000; POSITION: absolute;  width:80px; height:60px;left:'+(typeof(x)=='string'?eval(x):x)+'px;top:'+(typeof(y)=='string'?eval(y):y)+'px">'+content+'</DIV>');
+					
+					var newItem				= {};
+					newItem.object			= document.getElementById(id);
+					newItem.x				= x;
+					newItem.y				= y;
+
+					this.items[this.items.length]		= newItem;
+				  }
+		this.play	= function()
+				  {
+					collection				= this.items
+					setInterval('play()',10);
+				  }
+		}
+		function play()
+		{
+
+			for(var i=0;i<collection.length;i++)
+			{
+				var followObj		= collection[i].object;
+				var followObj_x		= (typeof(collection[i].x)=='string'?eval(collection[i].x):collection[i].x);
+				var followObj_y		= (typeof(collection[i].y)=='string'?eval(collection[i].y):collection[i].y);
+
+				if(followObj.offsetLeft!=(document.body.scrollLeft+followObj_x)) {
+					var dx=(document.body.scrollLeft+followObj_x-followObj.offsetLeft)*delta;
+					dx=(dx>0?1:-1)*Math.ceil(Math.abs(dx));
+					followObj.style.left=followObj.offsetLeft+dx + 'px';
+					}
+
+				if(followObj.offsetTop!=(document.body.scrollTop+followObj_y)) {
+					var dy=(document.body.scrollTop+followObj_y-followObj.offsetTop)*delta;
+					dy=(dy>0?1:-1)*Math.ceil(Math.abs(dy));
+					followObj.style.top=followObj.offsetTop+dy + 'px';
+					}
+				followObj.style.display	= '';
+			}
+		}	
+		
+	var theFloaters		= new floaters();
+	//右面
+	theFloaters.addItem('followDiv1','document.body.clientWidth-106',138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
+	//左面
+	theFloaters.addItem('followDiv2',6,138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
+	theFloaters.play();
+</script>
+<div id="top">
+	<div class="menu">
+		<div class="logo"><a href="index.html">公共单车那些事</a></div>
+		<div class="nav">
+			<ul>
+				<li style="border-left:1px solid #666;"><a href="index.html">首页</a></li>
+				<li><a href="index2.0map.html">全国</a></li>
+				<li><a href="index2.0stock.html">例子</a></li>
+				<li><a href="index2.0e1.html">问题</a></li>
+				<li><a href="index2.0chart.html">未来</a></li>
+				<li><a href="index2.0sum.html">总结</a></li>
+				<div style="clear:both;"></div>
+			</ul>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+<div id="main">
+	<div class="left">
+		<div class="notice">
+<font face="Verdana, Geneva, sans-serif" size="+0.5" color="#000000"><script src="images/others/jquery.min.js"></script>
+<script src="images/others/selectshare.js"></script>
+</head>
+
+<body>
+	
+		今年上半年，广州提出投1.2亿助推公共单车升级。事实上，全国各城市都在积极推动公共自行车，广州只是其中一个缩影。这股“公共自行车热”从何而来？不同地区的公共自行车项目投入情况又有何不同？自行车发展面临着哪些困境？未来又在哪里？这次试图透过数据挖掘、案例分析、深度评论，呈现一个高速奔跑但却漫无目标的公共自行车发展困境。
+
+		
+	
+<script>
+function inputimage(){
+$('<img id="imgSinaShare" class="img_share" title="选中内容分享到新浪微博" src="images/sina_share.gif" /><img id="imgQqShare" class="img_share" title="选中内容分享到腾讯微博" src="images/tt_share.png" />').appendTo('body');
+}
+</script> </font>
+
+		</div>
+	</div>
+	<div class="right">
+		<div class="men_list">
+			<ul>
+				<li><img src="images/1.1.jpg"/>
+<strong>全国</strong><a href="index2.0map.html">各省区公共自行车的投入城市占全体城市比例<br />目前中国有105个市级公共自行车项目，帮助上班族解决“最后一公里”问题。但经济发展的不平衡也影响了不同地区的公共自行车的发展状况。
+				</li>
+				<li><img src="images/2.2.jpg" />
+<strong>例子</strong><a href="index2.0stock.html">兰州2014年6月-2016年6月公共自行车保有量变化<br />城市公共自行车的数量随着需求量的增多而不断增加。。从2014年起，中国进入公共自行车元年。
+
+				</li>
+				<li><img src="images/3.3.jpg" />
+<strong>问题</strong><a href="index2.0e1.html">公共自行车的人为损坏与管理不善<br />公共单车推行四年，政府投入数以千万计，政府主导，企业参与运营的模式仍存在许多问题。
+
+				</li>
+				<li><img src="images/4.4.jpg" />
+<strong>未来</strong><a href="index2.0chart.html">十三五中国公共交通发展纲要<br />今年初，国家发改委会同交通部等部门联合下发《“十三五”节能减排实施方案》，倡导“135”出行方式
+                </li>
+				<li><img src="images/自行车.png" />
+<strong>总结</strong><a href="index2.0sum.html">公共自行车的发展道路<br />其实，运营公共单车，除了整个公共单车系统设计的问题之外，还需要考虑很多问题。
+
+				</li>
+
+				</li>
+				<div style="clear:both;"></div>
+			</ul>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+<div id="footer">
+版权所有：2016 作者：蒲乐川 李俊杰
+</div>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Voronoi</title>
+    <link rel="stylesheet" href="images/others/style.css">
+    <script type="text/javascript" src="images/others/paper-full.js"></script>
+    <script type="text/javascript" src="images/others/rhill-voronoi-core.js"></script>
+    <script type="text/paperscript" canvas="canvas">
+        var voronoi = new Voronoi();
+        var sites = generateBeeHivePoints(view.size / 200, true);
+        var bbox, diagram;
+        var oldSize = view.size;
+        var spotColor = new Color('black');
+        var mousePos = view.center;
+        var selected = false;
+
+        onResize();
+
+        function onMouseDown(event) {
+            sites.push(event.point);
+            renderDiagram();
+        }
+
+        function onMouseMove(event) {
+            mousePos = event.point;
+            if (event.count == 0)
+                sites.push(event.point);
+            sites[sites.length - 1] = event.point;
+            renderDiagram();
+        }
+
+        function renderDiagram() {
+            project.activeLayer.removeChildren();
+            var diagram = voronoi.compute(sites, bbox);
+            if (diagram) {
+                for (var i = 0, l = sites.length; i < l; i++) {
+                    var cell = diagram.cells[sites[i].voronoiId];
+                    if (cell) {
+                        var halfedges = cell.halfedges,
+                            length = halfedges.length;
+                        if (length > 2) {
+                            var points = [];
+                            for (var j = 0; j < length; j++) {
+                                v = halfedges[j].getEndpoint();
+                                points.push(new Point(v));
+                            }
+                            createPath(points, sites[i]);
+                        }
+                    }
+                }
+            }
+        }
+
+        function removeSmallBits(path) {
+            var averageLength = path.length / path.segments.length;
+            var min = path.length / 50;
+            for(var i = path.segments.length - 1; i >= 0; i--) {
+                var segment = path.segments[i];
+                var cur = segment.point;
+                var nextSegment = segment.next;
+                var next = nextSegment.point + nextSegment.handleIn;
+                if (cur.getDistance(next) < min) {
+                    segment.remove();
+                }
+            }
+        }
+
+        function generateBeeHivePoints(size, loose) {
+            var points = [];
+            var col = view.size / size;
+            for(var i = -1; i < size.width + 1; i++) {
+                for(var j = -1; j < size.height + 1; j++) {
+                    var point = new Point(i, j) / new Point(size) * view.size + col / 2;
+                    if (j % 2)
+                        point += new Point(col.width / 2, 0);
+                    if (loose)
+                        point += (col / 4) * Point.random() - col / 4;
+                    points.push(point);
+                }
+            }
+            return points;
+        }
+        function createPath(points, center) {
+            var path = new Path();
+            if (!selected) {
+                path.fillColor = spotColor;
+            } else {
+                path.fullySelected = selected;
+            }
+            path.closed = true;
+
+            for (var i = 0, l = points.length; i < l; i++) {
+                var point = points[i];
+                var next = points[(i + 1) == points.length ? 0 : i + 1];
+                var vector = (next - point) / 2;
+                path.add({
+                    point: point + vector,
+                    handleIn: -vector,
+                    handleOut: vector
+                });
+            }
+            path.scale(0.95);
+            removeSmallBits(path);
+            return path;
+        }
+
+        function onResize() {
+            var margin = 20;
+            bbox = {
+                xl: margin,
+                xr: view.bounds.width - margin,
+                yt: margin,
+                yb: view.bounds.height - margin
+            };
+            for (var i = 0, l = sites.length; i < l; i++) {
+                sites[i] = sites[i] * view.size / oldSize;
+            }
+            oldSize = view.size;
+            renderDiagram();
+        }
+
+        function onKeyDown(event) {
+            if (event.key == 'space') {
+                selected = !selected;
+                renderDiagram();
+            }
+        }
+    </script>
+</head>
+<body>
+    <canvas id="canvas" resize></canvas>
+</body>
+</html>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" href="images/style.css" rel="stylesheet" />
+<title>全国</title>
+</head>
+
+<body>
+<script type="text/javascript">
+var delta=0.08
+	var collection;
+	function floaters() {
+		this.items	= [];
+		this.addItem	= function(id,x,y,content)
+				  {
+					document.write('<DIV id='+id+' style="z-index: 1000; POSITION: absolute;  width:80px; height:60px;left:'+(typeof(x)=='string'?eval(x):x)+'px;top:'+(typeof(y)=='string'?eval(y):y)+'px">'+content+'</DIV>');
+					
+					var newItem				= {};
+					newItem.object			= document.getElementById(id);
+					newItem.x				= x;
+					newItem.y				= y;
+
+					this.items[this.items.length]		= newItem;
+				  }
+		this.play	= function()
+				  {
+					collection				= this.items
+					setInterval('play()',10);
+				  }
+		}
+		function play()
+		{
+
+			for(var i=0;i<collection.length;i++)
+			{
+				var followObj		= collection[i].object;
+				var followObj_x		= (typeof(collection[i].x)=='string'?eval(collection[i].x):collection[i].x);
+				var followObj_y		= (typeof(collection[i].y)=='string'?eval(collection[i].y):collection[i].y);
+
+				if(followObj.offsetLeft!=(document.body.scrollLeft+followObj_x)) {
+					var dx=(document.body.scrollLeft+followObj_x-followObj.offsetLeft)*delta;
+					dx=(dx>0?1:-1)*Math.ceil(Math.abs(dx));
+					followObj.style.left=followObj.offsetLeft+dx + 'px';
+					}
+
+				if(followObj.offsetTop!=(document.body.scrollTop+followObj_y)) {
+					var dy=(document.body.scrollTop+followObj_y-followObj.offsetTop)*delta;
+					dy=(dy>0?1:-1)*Math.ceil(Math.abs(dy));
+					followObj.style.top=followObj.offsetTop+dy + 'px';
+					}
+				followObj.style.display	= '';
+			}
+		}	
+		
+	var theFloaters		= new floaters();
+	//右面
+	theFloaters.addItem('followDiv1','document.body.clientWidth-106',138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
+	//左面
+	theFloaters.addItem('followDiv2',6,138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
+	theFloaters.play();
+</script>
+<div id="top">
+	<div class="menu">
+		<div class="logo"><a href="index.html">公共单车那些事</a></div>
+		<div class="nav">
+			<ul>
+				<li style="border-left:1px solid #666;"><a href="index.html">首页</a></li>
+				<li><a href="index2.0map.html">全国</a></li>
+				<li><a href="index2.0stock.html">例子</a></li>
+				<li><a href="index2.0e1.html">问题</a></li>
+				<li><a href="index2.0chart.html">未来</a></li>
+				<li><a href="index2.0sum.html">总结</a></li>
+				<div style="clear:both;"></div>
+			</ul>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+<div id="main">
+	<div class="left">
+		<div class="notice">
+<font face="Verdana, Geneva, sans-serif" size="+0.5" color="#000000"><script src="images/others/jquery.min.js"></script>
+<script src="images/others/selectshare.js"></script>
+</head>
+
+<body>
+	据加州大学伯克利分校统计，目前全球有712个城市有公共自行车项目，总数超过80万辆。近年来，中国试图重建自行车王国，雄心勃勃地推动低成本的公共自行车计划。仅武汉就有9万辆——去年还被评为世界最大公共自行车项目。交通专家说，目前中国有105个市级公共自行车项目，帮助上班族解决“最后一公里”问题。但经济发展的不平衡也影响了不同地区的公共自行车的发展状况。<script>
+function inputimage(){
+$('<img id="imgSinaShare" class="img_share" title="选中内容分享到新浪微博" src="images/sina_share.gif" /><img id="imgQqShare" class="img_share" title="选中内容分享到腾讯微博" src="images/tt_share.png" />').appendTo('body');
+}
+</script>
+</font>
+
+		</div>
+	</div>
+	<div class="right">
+		<div class="men_list">
+			<ul>
+				<html>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highmaps Example</title>
+
+		<script type="text/javascript" src="images/maps/jquery-1.8.3.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+$(function () {
+
+
+    // Instanciate the map
+    $('#container').highcharts('Map', {
+        chart: {
+            spacingBottom: 20
+        },
+        title: {
+            text: '全国各省市自治区公共自行车开通城市比例'
+        },
+		subtitle: {
+            text: '数据网络统计.  来源: 全国公共自行车网'
+        },
+
+        legend: {
+            enabled: true
+        },
+
+        plotOptions: {
+            map: {
+                allAreas: false,
+                joinBy:['hc-a2', 'code'],
+                dataLabels: {
+                    enabled: true,
+                    color: '#FFFFFF',
+                    formatter: function () {
+                        if (this.point.properties && this.point.properties.labelrank.toString() < 5) {
+                            return this.point.properties['iso-a2'];
+                        }
+                    },
+                    format: null,
+                    style: {
+                        fontWeight: 'bold'
+                    }
+                },
+                mapData: Highcharts.maps['countries/cn/custom/cn-all-sar-taiwan'],
+                tooltip: {
+                    headerFormat: '',
+                    pointFormat: '{point.name}: <b>{series.name}</b>'
+                }
+
+            }
+        },
+
+        series: [{
+            name: '10%-20%',
+            data: $.map(['HL','SX','SC', 'HA','HE', 'HB','JX','GX', 'JL','NM'], function (code) {
+                return { code: code };
+            })
+        }, {
+            name: '0%-10%',
+            data: $.map([ 'XJ', 'QH', 'XZ', 'NX', 'GS',  'YN', 'GZ',       'TW'], function (code) {
+                return { code: code };
+            })
+        }, {
+            name: '20%-30%',
+            data: $.map(['CQ','SD','LN', 'AH', 'HN','SA',  'HU',  'TW', 'PI'], function (code) {
+                return { code: code };
+            })
+        }, {
+            name: '40%以上',
+            data: $.map([ 'ZJ',  'TJ',  'FJ','SH','GD','MA','JS','HK', 'BJ'], function (code) {
+                return { code: code };
+            })
+        }]
+    });
+});
+		</script>
+	</head>
+	<body>
+<script src="images/maps/highmaps.js"></script>
+<script src="images/maps/data.js"></script>
+<script src="images/maps/cn-all-sar-taiwan.js"></script>
+<script src="images/maps/exporting.js"></script>
+
+
+<div id="container" style="height: 500px; min-width: 310px; max-width: 480px; margin: 0 auto"></div>
+
+	</body>
+</html>
+
+				<div style="clear:both;"></div>
+			</ul>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+<div id="footer">
+版权所有：2016 作者：蒲乐川 李俊杰
+</div>
+
+
+
+
+</body>
+</html>
