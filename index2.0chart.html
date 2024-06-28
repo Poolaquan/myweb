@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset="UTF8" />
 <link type="text/css" href="images/style.css" rel="stylesheet" />
-<title>δ��</title>
+<title>未来</title>
 </head>
 
 <body>
@@ -54,23 +54,23 @@ var delta=0.08
 		}	
 		
 	var theFloaters		= new floaters();
-	//����
-	theFloaters.addItem('followDiv1','document.body.clientWidth-106',138,'<img border="0" src="images/���г�.gif" style="width:120px;height:270px;border:0" alt="���г�.gif">');
-	//����
-	theFloaters.addItem('followDiv2',6,138,'<img border="0" src="images/���г�.gif" style="width:120px;height:270px;border:0" alt="���г�.gif">');
+	//右面
+	theFloaters.addItem('followDiv1','document.body.clientWidth-106',138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
+	//左面
+	theFloaters.addItem('followDiv2',6,138,'<img border="0" src="images/自行车.gif" style="width:120px;height:270px;border:0" alt="自行车.gif">');
 	theFloaters.play();
 </script>
 <div id="top">
 	<div class="menu">
-		<div class="logo"><a href="index.html">����������Щ��</a></div>
+		<div class="logo"><a href="index.html">公共单车那些事</a></div>
 		<div class="nav">
 			<ul>
-				<li style="border-left:1px solid #666;"><a href="index.html">��ҳ</a></li>
-				<li><a href="index2.0map.html">ȫ��</a></li>
-				<li><a href="index2.0stock.html">����</a></li>
-				<li><a href="index2.0e1.html">����</a></li>
-				<li><a href="index2.0chart.html">δ��</a></li>
-				<li><a href="index2.0sum.html">�ܽ�</a></li>
+				<li style="border-left:1px solid #666;"><a href="index.html">首页</a></li>
+				<li><a href="index2.0map.html">全国</a></li>
+				<li><a href="index2.0stock.html">例子</a></li>
+				<li><a href="index2.0e1.html">问题</a></li>
+				<li><a href="index2.0chart.html">未来</a></li>
+				<li><a href="index2.0sum.html">总结</a></li>
 				<div style="clear:both;"></div>
 			</ul>
 		</div>
@@ -86,13 +86,13 @@ var delta=0.08
 
 <body>
 	
-		����������ҷ���ί��ͬ��ͨ���Ȳ��������·�����ʮ���塱���ܼ���ʵʩ��������������135�����з�ʽ����1�������ڲ��У�3�������������г���5�������ڳ���������ͨ���ߣ�������ӿ��ƽ������ó��ƶȸĸ��չ�������г��Ե㡣�˴ν�ͨ���䲿��Ͷ����50�����Ƶ����г�������ӡ�С��������г����͡���̼��ͨ����ɫ���С���������
+		今年初，国家发改委会同交通部等部门联合下发《“十三五”节能减排实施方案》，倡导“135”出行方式，即1公里以内步行，3公里以内骑自行车，5公里以内乘坐公共交通工具；并提出加快推进公务用车制度改革，开展公务自行车试点。此次交通运输部共投入了50辆订制的自行车，车身印有“公共自行车”和“低碳交通、绿色出行”的字样。
 
 		
 	
 <script>
 function inputimage(){
-$('<img id="imgSinaShare" class="img_share" title="ѡ�����ݷ���������΢��" src="images/sina_share.gif" /><img id="imgQqShare" class="img_share" title="ѡ�����ݷ�������Ѷ΢��" src="images/tt_share.png" />').appendTo('body');
+$('<img id="imgSinaShare" class="img_share" title="选中内容分享到新浪微博" src="images/sina_share.gif" /><img id="imgQqShare" class="img_share" title="选中内容分享到腾讯微博" src="images/tt_share.png" />').appendTo('body');
 }
 </script>
 
@@ -122,10 +122,10 @@ $(function () {
             type: 'pie'
         },
         title: {
-            text: 'ʮ�����й�������ͨ��չδ��Ͷ��ռ��'
+            text: '十三五中国公共交通发展未来投资占比'
         },
         subtitle: {
-            text: '������β鿴��������.  ��Դ: �л����񹲺͹���ͨ���䲿'
+            text: '点击扇形查看具体数字.  来源: 中华人民共和国交通运输部'
         },
         plotOptions: {
             series: {
@@ -138,72 +138,72 @@ $(function () {
 
         tooltip: {
             headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> ռ��<br/>'
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> 占比<br/>'
         },
         series: [{
-            name: 'ԭͼ',
+            name: '原图',
             colorByPoint: true,
             data: [{
-                name: '�������糵',
+                name: '公共汽电车',
                 y: 26.33,
-                drilldown: '�������糵'
+                drilldown: '公共汽电车'
             }, {
-                name: '���й����ͨ',
+                name: '城市轨道交通',
                 y: 24.03,
-                drilldown: '���й����ͨ'
+                drilldown: '城市轨道交通'
             }, {
-                name: '�������г�',
+                name: '公共自行车',
                 y: 10.38,
-                drilldown: '�������г�'
+                drilldown: '公共自行车'
             }, {
-                name: '���ܽ�ͨϵͳ',
+                name: '智能交通系统',
                 y: 4.77,
-                drilldown: '���ܽ�ͨϵͳ'
+                drilldown: '智能交通系统'
             }, {
-                name: 'ԭ�н�ͨϵͳ����',
+                name: '原有交通系统改造',
                 y: 34.99,
-                drilldown: 'ԭ�н�ͨϵͳ����'
+                drilldown: '原有交通系统改造'
             
             }]
         }],
         drilldown: {
             series: [{
-                name: '�������糵δ���г�Ͷ��',
-                id: '�������糵',
+                name: '公共汽电车未来市场投资',
+                id: '公共汽电车',
                 data: [
-                    ['CNG��Դ��������', 14.13],
-                    ['������Դ��������', 7.2],
-                    ['��ͳ��Դ��������', 5]
+                    ['CNG能源公共汽车', 14.13],
+                    ['纯电能源公共汽车', 7.2],
+                    ['传统能源公共汽车', 5]
                 ]
             }, {
-                name: '���й����ͨδ���г�Ͷ��',
-                id: '���й����ͨ',
+                name: '城市轨道交通未来市场投资',
+                id: '城市轨道交通',
                 data: [
-                    ['���¹��', 11],
-                    ['����BRTͨ��', 4.32],
-                    ['�������͹��', 3.68],
-                    ['�Ǽʸ��ٹ��', 5.03]
+                    ['地下轨道', 11],
+                    ['地上BRT通道', 4.32],
+                    ['城区轻型轨道', 3.68],
+                    ['城际高速轨道', 5.03]
                 ]
             }, {
-                name: '�������г�δ���г�Ͷ��',
-                id: '�������г�',
+                name: '公共自行车未来市场投资',
+                id: '公共自行车',
                 data: [
-                    ['��Ӫ�г�', 6.76],
-                    ['�����г�', 3.62]
+                    ['民营市场', 6.76],
+                    ['政府市场', 3.62]
                 ]
             }, {
-                name: '���ܽ�ͨϵͳδ���г�Ͷ��',
-                id: '���ܽ�ͨϵͳ',
+                name: '智能交通系统未来市场投资',
+                id: '智能交通系统',
                 data: [
-                    ['��ӪͶ��', 3.56],
-                    ['����Ͷ��', 1.21]
+                    ['民营投资', 3.56],
+                    ['政府投资', 1.21]
                 ]
             }, {
-                name: 'ԭ�н�ͨϵͳ����Ͷ��',
-                id: 'ԭ�н�ͨϵͳ����',
+                name: '原有交通系统改造投资',
+                id: '原有交通系统改造',
                 data: [
-                    ['�½�������ͨϵͳ����', 14.99],
-                    ['�Ͼɳ�����ͨϵͳ����', 20.00]
+                    ['新建城区交通系统建设', 14.99],
+                    ['老旧城区交通系统升级', 20.00]
                 ]
             }]
         }
@@ -303,7 +303,7 @@ Microsoft Internet Explorer 8.0 - Tencent Traveler Edition    0.09%</pre>
 </div>
 
 <div id="footer">
-��Ȩ���У�2016 ���ߣ����ִ� ���
+版权所有：2016 作者：蒲乐川 李俊杰
 </div>
 
 
